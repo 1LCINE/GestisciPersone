@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestione Persone</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.6/dist/full.css" rel="stylesheet">
+  
+  <style>
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Altezza minima della viewport */
+    }
+  </style>
+
+</head>
+<body>
+  <div class="center-container">
+    <div class="container mx-auto mt-10">
+      <h1 class="text-2xl font-bold mb-5 text-center">Gestione Persone</h1>
+
+      <form id="formPersona" class="space-y-4 bg-base-200 p-5 rounded-lg shadow-md">
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" id="nome" placeholder="Nome" class="input input-bordered w-full" required>
+          <input type="text" id="cognome" placeholder="Cognome" class="input input-bordered w-full" required>
+          <input type="email" id="email" placeholder="Email" class="input input-bordered w-full" required>
+          <input type="date" id="dataNascita" class="input input-bordered w-full" required>
+          <input type="tel" id="telefono" placeholder="Numero di Telefono" class="input input-bordered w-full" required>
+          <input type="text" id="paese" placeholder="Paese" class="input input-bordered w-full" required>
+          <input type="text" id="provincia" placeholder="Provincia" class="input input-bordered w-full" required>
+        </div>
+        <div class="flex justify-end">
+          <button type="button" onclick="aggiungiPersona()" class="btn btn-primary">Aggiungi Persona</button>
+        </div>
+      </form>
+
+      <table class="table w-full mt-10">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Data di Nascita</th>
+            <th>Telefono</th>
+            <th>Paese</th>
+            <th>Provincia</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody id="tabellaPersone"></tbody>
+      </table>
+
+      <div class="flex justify-end mt-4">
+        <button id="submitButton" type="button" class="btn btn-success" disabled onclick="inviaDati()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
